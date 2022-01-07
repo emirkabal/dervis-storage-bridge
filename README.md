@@ -22,8 +22,8 @@ Default Encryption: Enable
 yarn
 ```
 
-Fill the `BASE_URL` and `PORT` scopes in `.env`
-`BASE_URL must be url like https://dervis.emirkabal.com/ or http://127.0.0.1:3000/`
+3. Fill the `BASE_URL` and `PORT` scopes in `.env`
+4. The `BASE_URL` env scope must be url like `https://dervis.emirkabal.com/` or `http://127.0.0.1:3000/`
 
 ```bash
 # linux based systems
