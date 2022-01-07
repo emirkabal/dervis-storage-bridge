@@ -12,9 +12,9 @@ Files in Bucket are: Private
 Default Encryption: Enable
 ```
 4. Copy BucketID and BucketName then fill the `.env`  file.
-5. Go to App Keys and click `Generate New Master Application Key` 
+5. Go to **App Keys** and click `Generate New Master Application Key` 
 6. Then copy given information to `.env` file. 
-7. `UPLOAD_KEY` is your authorzation header scope for security.
+7. `UPLOAD_KEY` is your authorization header scope for security.
 
 # Installation
 ```bash
