@@ -1,5 +1,5 @@
 # dervis-storage-bridge
-dervis-storage-bridge is a private file host for yourself, it uses Backblaze B2 Cloud Storage like an Amazon S3 and let upload your files in to the cloud immediately.
+dervis-storage-bridge is a private file host for yourself, it uses Backblaze B2 Cloud Storage like an Amazon S3 Cloud Storage, and lets upload your files into the cloud immediately.
 
 ## Pre-Installation
 
