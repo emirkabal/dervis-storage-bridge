@@ -8,6 +8,7 @@ declare namespace NodeJS {
     PORT: string;
     BASE_URL: string;
     UPLOAD_KEY: string;
+    REDIRECT_URL: string;
   }
 }
 

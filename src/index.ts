@@ -10,8 +10,9 @@ app.use(fileUpload());
 
 const bucket = new Bucket();
 
-app.get("/", async (req, res) => {
-  res.redirect("https://emirkabal.com");
+app.get("/", (req, res) => {
+  if (process.env.REDIRECT_URL) res.redirect(process.env.REDIRECT_URL);
+  else res.end();
 });
 
 app.post("/upload", async (req, res) => {
@@ -54,5 +55,5 @@ app.get("/:fileName", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`storage: Listening on port ${port}`);
+  console.log(`dervis-storage-bridge: Listening on port ${port}`);
 });

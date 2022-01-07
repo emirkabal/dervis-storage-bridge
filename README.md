@@ -15,6 +15,7 @@ Default Encryption: Enable
 5. Go to **App Keys** and click `Generate New Master Application Key` 
 6. Then copy given information to `.env` file. 
 7. `UPLOAD_KEY` is your authorization header scope for security.
+8. If you want to just use the "/" route to redirect to another website fill the `REDIRECT_URL` scope in the `.env` file.
 
 # Installation
 ```bash
