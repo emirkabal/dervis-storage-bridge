@@ -1,0 +1,28 @@
+{
+  "name": "dervis",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=production ts-node src/index.ts",
+    "start:win": "set NODE_ENV=production&&ts-node src/index.ts",
+    "dev": "NODE_ENV=development ts-node src/index.ts",
+    "dev:win": "set NODE_ENV=development&&ts-node src/index.ts"
+  },
+  "dependencies": {
+    "backblaze": "^2.3.0",
+    "backblaze-b2": "^1.7.0",
+    "express": "^4.17.2",
+    "express-fileupload": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/backblaze-b2": "^1.5.1",
+    "@types/express": "^4.17.13",
+    "@types/express-fileupload": "^1.2.2",
+    "@types/node": "^17.0.8",
+    "dotenv": "^10.0.0",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}

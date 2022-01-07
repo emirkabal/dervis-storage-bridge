@@ -1,0 +1,14 @@
+﻿{
+  "Version": "13.7.0",
+  "Name": "dervis.emirkabal.com",
+  "DestinationType": "ImageUploader, TextUploader, FileUploader",
+  "RequestMethod": "POST",
+  "RequestURL": "https://dervis.emirkabal.com/upload",
+  "Headers": {
+    "authorization": "enterkeyhere"
+  },
+  "Body": "MultipartFormData",
+  "FileFormName": "file",
+  "URL": "$json:url$",
+  "ErrorMessage": "$json:error$"
+}
