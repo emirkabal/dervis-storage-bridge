@@ -1,10 +1,10 @@
 # dervis-storage-bridge
-Dervis is a private file host for yourself, dervis is uses Backblaze B2 Cloud Storage like a Amazon S3 and lets upload your files immediately.
+dervis-storage-bridge is a private file host for yourself, it uses Backblaze B2 Cloud Storage like an Amazon S3 and let upload your files in to the cloud immediately.
 
 ## Pre-Installation
 
 1. Sign up for [Backblaze.com](https://www.backblaze.com/b2/sign-up.html?referrer=emirkabal)
-2. Then enter **Buckets** page.
+2. Then go to **Buckets** page.
 3. Create a new bucket with this options:
 ```
 Bucket Name: <entername>
