@@ -1,9 +1,9 @@
 ﻿{
   "Version": "13.7.0",
-  "Name": "dervis.emirkabal.com",
+  "Name": "dervis-storage-bridge",
   "DestinationType": "ImageUploader, TextUploader, FileUploader",
   "RequestMethod": "POST",
-  "RequestURL": "https://dervis.emirkabal.com/upload",
+  "RequestURL": "<url>/upload",
   "Headers": {
     "authorization": "enterkeyhere"
   },
