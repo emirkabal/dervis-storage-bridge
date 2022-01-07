@@ -10,7 +10,6 @@
     "dev:win": "set NODE_ENV=development&&ts-node src/index.ts"
   },
   "dependencies": {
-    "backblaze": "^2.3.0",
     "backblaze-b2": "^1.7.0",
     "express": "^4.17.2",
     "express-fileupload": "^1.2.1"
