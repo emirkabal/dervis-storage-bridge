@@ -46,10 +46,9 @@ app.get("/:fileName", async (req, res) => {
   try {
     const { fileName } = req.params;
     const stream = await bucket.readStream(fileName);
+    if (mime.lookup(fileName)) res.contentType(mime.lookup(fileName) as string);
     stream.pipe(res);
     stream.on("end", () => {
-      if (mime.lookup(fileName))
-        res.contentType(mime.lookup(fileName) as string);
       res.end();
     });
   } catch (error) {
