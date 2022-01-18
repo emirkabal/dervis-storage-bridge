@@ -3,6 +3,7 @@ dotenv.config();
 import express from "express";
 import Bucket from "./classes/Bucket";
 import fileUpload, { UploadedFile } from "express-fileupload";
+import mime from "mime-types";
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -47,6 +48,8 @@ app.get("/:fileName", async (req, res) => {
     const stream = await bucket.readStream(fileName);
     stream.pipe(res);
     stream.on("end", () => {
+      if (mime.lookup(fileName))
+        res.contentType(mime.lookup(fileName) as string);
       res.end();
     });
   } catch (error) {
