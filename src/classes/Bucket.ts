@@ -14,7 +14,7 @@ export default class extends B2 {
   async auth() {
     if (this.lastAuthorization) {
       const diff = new Date().getTime() - this.lastAuthorization.getTime();
-      if (diff < 1000 * 60 * 60 * 24) return;
+      if (diff < 1000 * 60 * 60 * 12) return;
     }
     await this.authorize();
     this.lastAuthorization = new Date();
