@@ -9,6 +9,11 @@ const port = process.env.PORT || 3000;
 
 app.use(fileUpload());
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 const bucket = new Bucket();
 
 app.get("/", (req, res) => {
