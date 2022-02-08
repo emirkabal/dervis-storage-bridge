@@ -41,7 +41,7 @@ app.post("/upload", async (req, res) => {
       }${data.fileName}`
     });
   } catch (error) {
-    res.status(400).json({
+    res.status(500).json({
       error: error?.message || "Couldn't upload file"
     });
   }
