@@ -9,6 +9,7 @@ declare namespace NodeJS {
     BASE_URL: string;
     UPLOAD_KEY: string;
     REDIRECT_URL: string;
+    ENABLE_LOCAL_STORAGE: string;
   }
 }
 
