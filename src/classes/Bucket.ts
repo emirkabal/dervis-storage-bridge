@@ -1,14 +1,14 @@
-import B2 from "backblaze-b2";
-import { Readable } from "stream";
-const cache = new Map();
+import B2 from "backblaze-b2"
+import { Readable } from "stream"
+const cache = new Map()
 
 export default class extends B2 {
-  lastAuthorization: Date;
+  lastAuthorization: Date
   constructor() {
     super({
       applicationKeyId: process.env.B2_ID,
       applicationKey: process.env.B2_KEY
-    });
+    })
   }
 
   async auth() {
@@ -16,44 +16,44 @@ export default class extends B2 {
       this.lastAuthorization &&
       this.lastAuthorization.getTime() > Date.now() - 10800000
     )
-      return;
-    await this.authorize().catch((err) => console.error(err));
-    console.log("Authorized");
-    this.lastAuthorization = new Date();
+      return
+    await this.authorize().catch((err) => console.error(err))
+    console.log("Authorized")
+    this.lastAuthorization = new Date()
   }
 
   async getUploadInfo(): Promise<UploadInfo> {
-    await this.auth();
-    if (cache.has("uploadInfo")) return cache.get("uploadInfo");
+    await this.auth()
+    if (cache.has("uploadInfo")) return cache.get("uploadInfo")
     const { data } = await this.getUploadUrl({
       bucketId: process.env.B2_BUCKET_ID
-    });
-    cache.set("uploadInfo", data);
-    return data;
+    })
+    cache.set("uploadInfo", data)
+    return data
   }
 
   async upload(fileName: string, file: Buffer): Promise<UploadedFile> {
-    await this.auth();
-    const { uploadUrl, authorizationToken } = await this.getUploadInfo();
+    await this.auth()
+    const { uploadUrl, authorizationToken } = await this.getUploadInfo()
     const { data } = await this.uploadFile({
       fileName,
       data: file,
       uploadUrl,
       uploadAuthToken: authorizationToken
-    });
-    return data;
+    })
+    return data
   }
 
   async readStream(
     fileName: string,
     bucket: string = process.env.B2_BUCKET_NAME
   ): Promise<Readable> {
-    await this.auth();
+    await this.auth()
     const { data } = await this.downloadFileByName({
       fileName: fileName,
       bucketName: bucket,
       responseType: "stream"
-    });
-    return data;
+    })
+    return data
   }
 }
