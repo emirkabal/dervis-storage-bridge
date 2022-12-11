@@ -16,11 +16,11 @@ export default class Local {
 
     this.app.post("/upload", async (req, res) => {
       if (req.headers.authorization !== process.env.UPLOAD_KEY)
-        return res.status(401).send({
+        return res.status(401).json({
           error: "Unauthorized"
         })
       if (!req.files)
-        return res.status(400).send({
+        return res.status(400).json({
           error: "No files were uploaded."
         })
       try {
